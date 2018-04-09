@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../service/news.service'; 
+import { Story } from '../models/story'; 
 
 @Component({
   selector: 'hn-news',
@@ -7,7 +8,7 @@ import { NewsService } from '../service/news.service';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-
+	stories: Story[] = []; 
 	topStoriesId: number[] = new Array<number>(); 
 
   constructor(private newsService: NewsService) { }
@@ -18,11 +19,19 @@ export class NewsComponent implements OnInit {
 
 }
 
-
-
 	getIds(){
  	this.newsService.getTopStoriesId().subscribe(response =>{
   		this.topStoriesId = response; 
+  		this.getTopStories(); 
+  		console.log(this.stories); 
   	})
   }
+
+  	getTopStories(){
+  		for (let i= 0; i < 20; i ++){
+     this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
+       this.stories.push(response); 
+     })
+  	}
+}
 }

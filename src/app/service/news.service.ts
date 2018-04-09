@@ -20,4 +20,10 @@ export class NewsService {
   	})
   }
 
+  getStory(id:number) {
+ 			return this.http.get(baseUrl + "item/" + id + ".json").map(response =>{
+ 				return new Story(response); 
+ 			})
+ 		}	
+
 }
