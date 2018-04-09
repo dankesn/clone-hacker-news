@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule} from './app-routing/app-routing.module'; 
+import { NewsService } from './service/news.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -22,8 +24,9 @@ import { CommentsComponent } from './comments/comments.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

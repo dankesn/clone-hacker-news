@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../service/news.service'; 
 
 @Component({
   selector: 'hn-news',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+	topStoriesId: number[] = new Array<number>(); 
+
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-  }
+  	this.getIds(); 
 
+
+}
+
+
+
+	getIds(){
+ 	this.newsService.getTopStoriesId().subscribe(response =>{
+  		this.topStoriesId = response; 
+  	})
+  }
 }
