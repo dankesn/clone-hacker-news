@@ -10,6 +10,7 @@ import { Story } from '../models/story';
 export class NewsComponent implements OnInit {
 	stories: Story[] = []; 
 	topStoriesId: number[] = new Array<number>(); 
+	site: string; 
 
   constructor(private newsService: NewsService) { }
 
@@ -30,8 +31,16 @@ export class NewsComponent implements OnInit {
   	getTopStories(){
   		for (let i= 0; i < 20; i ++){
      this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
-       this.stories.push(response); 
+     	response.url = this.splitUrl(response.url);
+       this.stories.push(response);
+
      })
   	}
 }
+
+	splitUrl(url: string){
+		let array = [];
+		array = url.split("/");
+		return array[2];
+	}
 }
