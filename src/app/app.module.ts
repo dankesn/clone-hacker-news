@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule} from './app-routing/app-routing.module'; 
 import { NewsService } from './service/news.service';
 import { HttpClientModule } from '@angular/common/http';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 
 
@@ -19,7 +20,8 @@ import { CommentsComponent } from './comments/comments.component';
     NavbarComponent,
     FooterComponent,
     NewsComponent,
-    CommentsComponent
+    CommentsComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,

@@ -2,11 +2,11 @@
 	<div class="col">
 		<span>{{i+1}}.</span>
 		<h1 class="title">{{story.title}}</h1>
-		<span>({{story.url}})</span>
+		<span>({{splitUrl(story.url)}})</span>
 		<br>
 		<span>{{story.score}} points</span>
 		<span>by {{story.by}}</span>
-
+		<span>{{story.time*1000 | timeAgo}}</span>
 		<a>Comments: {{story.kids.length}}</a>
 
 		
