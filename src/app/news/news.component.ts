@@ -10,6 +10,7 @@ import { Story } from '../models/story';
 export class NewsComponent implements OnInit {
 	stories: Story[] = []; 
 	topStoriesId: number[] = new Array<number>(); 
+	newsCounter: number = 20; 
 
   constructor(private newsService: NewsService) { }
 
@@ -27,18 +28,33 @@ export class NewsComponent implements OnInit {
   	})
   }
 
-  	getTopStories(){
-  		for (let i= 0; i < 20; i ++){
+  	getTopStories(y?){
+  		   if (y){
+     for (let i= y; i < this.newsCounter; i ++){
      this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
-       this.stories.push(response);
-
+       this.stories.push(response); 
      })
-  	}
+   }
+
+   }else {   
+     for (let i= 0; i < this.newsCounter; i ++){
+     this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
+       this.stories.push(response); 
+     })
+   }
+   }
 }
 
 	splitUrl(url: string){
 		let array = [];
 		array = url.split("/");
 		return array[2];
+	}
+
+	getMoreNews(){
+		 let index = this.newsCounter; 
+  		this.newsCounter += 10; 
+  		console.log(this.newsCounter);
+  		this.getTopStories(index); 
 	}
 }

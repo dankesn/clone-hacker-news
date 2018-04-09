@@ -1,14 +1,22 @@
 <div class="row" *ngFor="let story of stories; let i =index">
 	<div class="col">
 		<span>{{i+1}}.</span>
-		<h1 class="title">{{story.title}}</h1>
+		<h1 class="title"><a href="{{story.url}}" target="_blank">{{story.title}}</a></h1>
 		<span>({{splitUrl(story.url)}})</span>
 		<br>
-		<span>{{story.score}} points</span>
-		<span>by {{story.by}}</span>
-		<span>{{story.time*1000 | timeAgo}}</span>
-		<a>Comments: {{story.kids.length}}</a>
+		<span class="underTitle">
 
+			<span>{{story.score}} points</span>
+			<span>by {{story.by}}</span>
+			<span>{{story.time*1000 | timeAgo}}</span>
+			<a>Comments: {{story.kids.length}}</a>
+
+		</span>
 		
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<button class="loadMore" (click)="getMoreNews()" *ngIf="newsCounter<500">Load more</button>
 	</div>
 </div>
