@@ -1,0 +1,14 @@
+	<div class="col">
+		<h1 class="title"><a href="{{story.url}}" target="_blank">{{story.title}}</a></h1>
+		<span>({{splitUrl(story.url)}})</span>
+		<br>
+		<span class="underTitle">
+
+			<span>{{story.score}} points</span>
+			<span>by {{story.by}}</span>
+			<span>{{story.time*1000 | timeAgo}}</span>
+			<a [routerLink]="['/news/', story.id]">Comments: {{story.kids.length}}</a>
+
+		</span>
+		
+	</div>

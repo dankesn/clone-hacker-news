@@ -12,6 +12,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { NewsComponent } from './news/news.component';
 import { CommentsComponent } from './comments/comments.component';
+import { NewsItemComponent } from './news/news-item/news-item.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CommentsComponent } from './comments/comments.component';
     FooterComponent,
     NewsComponent,
     CommentsComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    NewsItemComponent
   ],
   imports: [
     BrowserModule,
