@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Story } from '../models/story';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { Comment } from '../models/comment';
 
 const baseUrl = "https://hacker-news.firebaseio.com/v0/";
 
@@ -25,5 +26,11 @@ export class NewsService {
  				return new Story(response); 
  			})
  		}	
+
+    getComment(id: number) {
+      return this.http.get(baseUrl + "item/" + id + ".json").map(response =>{
+         return new Comment(response); 
+       })
+    }
 
 }
