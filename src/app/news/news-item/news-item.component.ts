@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Story } from '../../models/story'; 
 
 @Component({
@@ -7,17 +7,23 @@ import { Story } from '../../models/story';
   styleUrls: ['./news-item.component.scss']
 })
 export class NewsItemComponent implements OnInit {
-	@Input() story: Story;
+	@Input() story = new Story();
+
+
+
+ 
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {   
+
   }
 
-  splitUrl(url: string){
-		let array = [];
-		array = url.split("/");
-		return array[2];
-	}
+  splitUrl(url:string){
+    let array = [];
+    array = url.split("/");
+    return array[2];
+  }
 
+ 
 }

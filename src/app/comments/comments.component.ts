@@ -14,7 +14,7 @@ export class CommentsComponent implements OnInit {
 	id; 
 	comments: Comment[] = []; 
 	story: Story; 
-
+ 
   constructor(private route: ActivatedRoute, private newsService: NewsService) { }
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class CommentsComponent implements OnInit {
 }
   
   });
-  	console.log(this.comments); 
+  
 
 }
 }

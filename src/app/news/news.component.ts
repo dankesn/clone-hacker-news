@@ -24,7 +24,6 @@ export class NewsComponent implements OnInit {
  	this.newsService.getTopStoriesId().subscribe(response =>{
   		this.topStoriesId = response; 
   		this.getTopStories(); 
-  		console.log(this.stories); 
   	})
   }
 
@@ -45,11 +44,7 @@ export class NewsComponent implements OnInit {
    }
 }
 
-	splitUrl(url: string){
-		let array = [];
-		array = url.split("/");
-		return array[2];
-	}
+	
 
 	getMoreNews(){
 		 let index = this.newsCounter; 
@@ -57,4 +52,9 @@ export class NewsComponent implements OnInit {
   		console.log(this.newsCounter);
   		this.getTopStories(index); 
 	}
+
+  
+
+   
+
 }
