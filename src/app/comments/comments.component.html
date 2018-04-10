@@ -9,7 +9,7 @@
 <div class="row">
 	<div class="col" >
 		<div *ngFor="let comment of comments">
-		<p>{{comment.text}}</p>
+		<hn-comment-item [comment]="comment"></hn-comment-item>
 	</div>
 	</div>
 </div>

@@ -13,6 +13,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { NewsComponent } from './news/news.component';
 import { CommentsComponent } from './comments/comments.component';
 import { NewsItemComponent } from './news/news-item/news-item.component';
+import { CommentItemComponent } from './comments/comment-item/comment-item.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NewsItemComponent } from './news/news-item/news-item.component';
     NewsComponent,
     CommentsComponent,
     TimeAgoPipe,
-    NewsItemComponent
+    NewsItemComponent,
+    CommentItemComponent
   ],
   imports: [
     BrowserModule,
