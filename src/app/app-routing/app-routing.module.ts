@@ -7,7 +7,7 @@ import { CommentsComponent } from '../comments/comments.component';
 
 const routes: Routes = [
 	{ path: "news", component: NewsComponent},
-	{ path: "comments", component: CommentsComponent },
+	{ path: "news/:id", component: CommentsComponent },
 	{ path: '', redirectTo: '/news', pathMatch: 'full'}
 
 ];

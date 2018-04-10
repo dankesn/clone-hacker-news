@@ -9,7 +9,7 @@
 			<span>{{story.score}} points</span>
 			<span>by {{story.by}}</span>
 			<span>{{story.time*1000 | timeAgo}}</span>
-			<a>Comments: {{story.kids.length}}</a>
+			<a [routerLink]="['/news/', story.id]">Comments: {{story.kids.length}}</a>
 
 		</span>
 		
