@@ -11,6 +11,7 @@ import { NewsService } from '../../service/news.service';
 export class CommentItemComponent implements OnInit {
 	@Input() commentId: number; 
 	comment: Comment; 
+  showReplies: boolean = false; 
 
   constructor(private newsService: NewsService) { }
 
@@ -18,6 +19,10 @@ export class CommentItemComponent implements OnInit {
   	this.newsService.getComment(this.commentId).subscribe(response =>{
   		this.comment = response; 
   	})
+  }
+
+  toggleReplies(){
+    this.showReplies = !this.showReplies; 
   }
 
 }
