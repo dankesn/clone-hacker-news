@@ -2,8 +2,13 @@
 	<div class="col">
 		<span>{{comment?.by}}</span>
 		<span>{{comment?.time *1000 | timeAgo}}</span>
-		<a *ngIf="comment?.kids.length !=0">[+{{comment?.kids.length}}]</a>
+		<a *ngIf="comment.kids.length > 0">[+{{comment?.kids.length}}]</a>
 		<article [innerHTML]="comment?.text"></article>
-		
 	</div>
 </div>
+
+<div class="row" *ngIf="comment?.kids.length !=0" class="reply">
+	<hn-comment-item *ngFor = "let commentId of comment.kids" [commentId] = "commentId"></hn-comment-item>
+</div>
+
+
