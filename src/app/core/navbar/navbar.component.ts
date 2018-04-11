@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'hn-navbar',
   templateUrl: './navbar.component.html',

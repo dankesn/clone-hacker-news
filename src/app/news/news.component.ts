@@ -58,7 +58,6 @@ export class NewsComponent implements OnInit {
 	getMoreNews(){
 		 let index = this.newsCounter; 
   		this.newsCounter += 10; 
-  		console.log(this.newsCounter);
   		this.getTopStories(index); 
 	}
 

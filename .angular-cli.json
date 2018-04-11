@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "hn",
       "styles": [
-        "styles.scss",
+        "src/sass/styles.scss",
         "assets/css/bootstrap.css"
       ],
       "scripts": [],

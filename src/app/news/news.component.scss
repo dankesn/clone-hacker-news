@@ -1,5 +1,9 @@
+@import '../sass/_variables';
+
+
 .news {
 	padding-left: 1em; 
+	margin-top: 0.3em; 
 }
 
 .loadMore {
@@ -12,7 +16,7 @@
 
 	&:hover{
 		opacity: 0.7; 
-		color: grey; 
+		color: $link-color; 
 	}
 
 
@@ -22,5 +26,9 @@
 
   .numeration {
   	display: none; 
+  }
+
+  .news {
+  	margin-top: 0.5em; 
   }
 }
