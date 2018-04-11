@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col">
-		<span>{{comment?.by}}</span>
+		<span>{{comment?.by }}</span>
 		<span>{{comment?.time *1000 | timeAgo}}</span>
 		
 		<article [innerHTML]="comment?.text"></article>

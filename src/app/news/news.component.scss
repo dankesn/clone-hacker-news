@@ -1,0 +1,26 @@
+.news {
+	padding-left: 1em; 
+}
+
+.loadMore {
+	margin: 1em;
+	border: none; 
+	background: white; 
+	padding: 0.5em; 
+	outline: none; 
+	cursor: pointer; 
+
+	&:hover{
+		opacity: 0.7; 
+		color: grey; 
+	}
+
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .numeration {
+  	display: none; 
+  }
+}

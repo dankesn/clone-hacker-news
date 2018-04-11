@@ -24,7 +24,10 @@ export class NewsComponent implements OnInit {
  	this.newsService.getTopStoriesId().subscribe(response =>{
   		this.topStoriesId = response; 
   		this.getTopStories(); 
-  	})
+  	},
+    error =>{
+      console.log("Error. Reason:", error.statusText);
+    })
   }
 
   	getTopStories(y?){
@@ -32,14 +35,20 @@ export class NewsComponent implements OnInit {
      for (let i= y; i < this.newsCounter; i ++){
      this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
        this.stories.push(response); 
-     })
+     },
+     error =>{
+      console.log("Error. Reason:", error.statusText);
+    })
    }
 
    }else {   
      for (let i= 0; i < this.newsCounter; i ++){
      this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
        this.stories.push(response); 
-     })
+     },
+     error =>{
+      console.log("Error. Reason:", error.statusText);
+    })
    }
    }
 }

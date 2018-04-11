@@ -3,6 +3,7 @@ import { Comment } from '../../models/comment';
 import { NewsService } from '../../service/news.service';
 
 
+
 @Component({
   selector: 'hn-comment-item',
   templateUrl: './comment-item.component.html',
@@ -18,7 +19,11 @@ export class CommentItemComponent implements OnInit {
   ngOnInit() {
   	this.newsService.getComment(this.commentId).subscribe(response =>{
   		this.comment = response; 
-  	})
+  	},
+    error =>{
+      console.log("Error. Reason:", error.statusText);
+    }
+    )
   }
 
   toggleReplies(){
