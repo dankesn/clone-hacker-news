@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Story } from '../models/story';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { Comment } from '../models/comment';
+import { Observable } from 'rxjs';
+
+
 
 const baseUrl = "https://hacker-news.firebaseio.com/v0/";
 
@@ -20,10 +24,16 @@ export class NewsService {
   	})
   }
 
-  getStory(id:number) {
+  getStory(id:number): Observable<Story> {
  			return this.http.get(baseUrl + "item/" + id + ".json").map(response =>{
  				return new Story(response); 
  			})
  		}	
+
+    getComment(id: number): Observable<Comment> {
+      return this.http.get(baseUrl + "item/" + id + ".json").map(response =>{
+         return new Comment(response); 
+       })
+    }
 
 }
