@@ -12,7 +12,6 @@ import { Story } from '../models/story';
 })
 export class CommentsComponent implements OnInit {
 	id; 
-	comments: Comment[] = []; 
 	story: Story; 
  
   constructor(private route: ActivatedRoute, private newsService: NewsService) { }
@@ -21,16 +20,6 @@ export class CommentsComponent implements OnInit {
   	this.id = this.route.snapshot.paramMap.get('id');
   	this.newsService.getStory(this.id).subscribe(response =>{
   		this.story = response; 
-
-  		for (let i in this.story.kids){
-  		this.newsService.getComment(this.story.kids[i]).subscribe( response =>{
-  		this.comments.push(response); 
-  		 
-  	});
-  	
-
-}
-  
   });
   
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from '../../models/comment';
+import { NewsService } from '../../service/news.service';
 
 
 @Component({
@@ -8,11 +9,15 @@ import { Comment } from '../../models/comment';
   styleUrls: ['./comment-item.component.scss']
 })
 export class CommentItemComponent implements OnInit {
-	@Input() comment: Comment; 
+	@Input() commentId: number; 
+	comment: Comment; 
 
-  constructor() { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
+  	this.newsService.getComment(this.commentId).subscribe(response =>{
+  		this.comment = response; 
+  	})
   }
 
 }
