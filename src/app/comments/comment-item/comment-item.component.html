@@ -6,7 +6,7 @@
 			<a (click) = "toggleComment()" *ngIf="showComment" class="collapseCom">[-]</a>
 			</span>
 			<span class="by">{{comment?.by }}</span>
-			<span class="commentTime">| {{comment?.time *1000 | timeAgo}}</span>
+			<span class="commentTime">| {{comment?.time*1000 | timeAgo}}</span>
 		</div>
 		<div>
 
