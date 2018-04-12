@@ -3,9 +3,8 @@
 
 .title {
 	font-size: 1em; 
-	display: inline; 
-	
-	
+	display: inline;
+	letter-spacing: 0.02em;  
 
 }
 
@@ -23,5 +22,25 @@
 	&:visited {
 		color: $link-color; 
 	}
+}
+
+.item {
+
+	&:hover {
+		opacity: 0.7; 
+	}
+}
+
+
+@media only screen and (max-width: 750px){
+	.item {
+		padding-top: 0,8em; 
+	}
+
+	.title {
+		letter-spacing: none; 
+	}
+
+
 }
 

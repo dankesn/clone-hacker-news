@@ -36,3 +36,9 @@ margin-bottom: 0.5em;
 .collapseCom {
 	cursor: pointer;
 }
+
+@media only screen and (max-width: 750px) {
+	.reply {
+		padding-left: 1em; 
+	}
+}
