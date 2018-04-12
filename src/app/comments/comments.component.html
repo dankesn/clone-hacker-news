@@ -11,7 +11,7 @@
 		<div>
 		
 		<div *ngIf="story">
-		<hn-comment-item   *ngFor="let commentId of story.kids" [commentId]="commentId"></hn-comment-item>
+		<hn-comment-item   *ngFor="let commentId of story.kids" [commentId]="commentId" [storyId]="story.id"></hn-comment-item>
 		</div>
 	
 		</div>

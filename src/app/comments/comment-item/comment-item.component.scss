@@ -21,6 +21,7 @@
 
 .author{
 padding: 0, 0.5em; 
+margin-bottom: 0.5em; 
 
 .articles {
 	display: inline; 
@@ -30,4 +31,8 @@ padding: 0, 0.5em;
 	font-weight: bold; 
 }
 
+}
+
+.collapseCom {
+	cursor: pointer;
 }

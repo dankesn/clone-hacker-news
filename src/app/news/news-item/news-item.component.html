@@ -2,7 +2,9 @@
 
 		<div class="col">
 		<h1 class="title"><a class="linkedUrl" href="{{story?.url}}" target="_blank">{{story?.title}}</a></h1>
+		<span *ngIf="story?.url != ''"> <!-- to remove empty brackets from ASK stories -->
 		<span *ngIf="story" class="source">({{splitUrl(story.url)}})</span>
+		</span>
 		<br>
 		<span class="underTitle">
 			

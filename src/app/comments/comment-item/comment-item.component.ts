@@ -13,6 +13,8 @@ export class CommentItemComponent implements OnInit {
 	@Input() commentId: number; 
 	comment: Comment; 
   showReplies: boolean = false; 
+  showComment: boolean = true; 
+  @Input() storyId; 
 
   constructor(private newsService: NewsService) { }
 
@@ -28,6 +30,11 @@ export class CommentItemComponent implements OnInit {
 
   toggleReplies(){
     this.showReplies = !this.showReplies; 
+  }
+
+  toggleComment(){
+    this.showComment = !this.showComment; 
+    this.showReplies = false; 
   }
 
 }
