@@ -1,13 +1,13 @@
 <div class="container">
 	<div class="row news" *ngFor="let story of stories; let i=index">
 		
-		<span class="numeration">{{i+1}}. </span>
+		<span class="numeration">{{i+1}}.&nbsp; </span>
 		 <hn-news-item [story]= "story"></hn-news-item>
 		
 		</div>
 <div class="row">
 	<div class="col">
-		<button class="loadMore" (click)="getMoreNews()" *ngIf="newsCounter<500">Load more</button>
+		<button class="loadMore" (click)="getMoreNews()" *ngIf="newsCounter<topStoriesId.length">Load more</button>
 	</div>
 
 	</div>

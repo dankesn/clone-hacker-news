@@ -19,7 +19,7 @@ export class Story {
     this.score = obj && obj.score || null;
     this.time = obj && obj.time || null;
     this.title = obj && obj.title || "";
-    this.type = obj &&  obj.type || "";
+    this.type = obj &&  obj.type || null;
     this.url = obj && obj.url || "";
   }
 

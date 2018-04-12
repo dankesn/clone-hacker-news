@@ -1,15 +1,17 @@
 	<div class="row">
 
 		<div class="col">
-		<h1 class="title"><a href="{{story?.url}}" target="_blank">{{story?.title}}</a></h1>
+		<h1 class="title"><a class="linkedUrl" href="{{story?.url}}" target="_blank">{{story?.title}}</a></h1>
+		<span *ngIf="story?.url != ''"> <!-- to remove empty brackets from ASK stories -->
 		<span *ngIf="story" class="source">({{splitUrl(story.url)}})</span>
+		</span>
 		<br>
 		<span class="underTitle">
 			
 			<div class="col">
-			<span>{{story?.score}} points</span>
-			<span>by {{story?.by}}</span>
-			<span>{{story?.time*1000 | timeAgo}}</span>
+			<span>{{story?.score}} points &nbsp;</span>
+			<span>by {{story?.by}} &nbsp;</span>
+			<span>{{story?.time*1000 | timeAgo}} &nbsp;</span>
 			<a *ngIf="story" [routerLink]="['/news/', story.id]">Comments: {{story.kids.length}}</a>
 		</div>
 		</span>

@@ -1,16 +1,26 @@
 <div class="row">
-	<div class="col">
-		<span>{{comment?.by }}</span>
-		<span>{{comment?.time *1000 | timeAgo}}</span>
-		
-		<article [innerHTML]="comment?.text"></article>
-		<span *ngIf="comment?.kids.length >0">
-		<a (click)="toggleReplies()" *ngIf="showReplies" >Hide replies</a>
-		</span>
+	<div class="col" *ngIf="comment?.by">   <!-- to hide comments which have only time displaying -->
+		<div class="author">
+			<span *ngIf="storyId==comment.parent">   <!-- collapsing only on comments, not on replies -->
+			<a (click) = "toggleComment()" *ngIf="!showComment" class="collapseCom">[+]</a>
+			<a (click) = "toggleComment()" *ngIf="showComment" class="collapseCom">[-]</a>
+			</span>
+			<span class="by">{{comment?.by }}</span>
+			<span class="commentTime">| {{comment?.time*1000 | timeAgo}}</span>
+		</div>
+		<div>
 
-		<span *ngIf="comment?.kids.length >0">
-		<a (click)="toggleReplies()" *ngIf="!showReplies" >Show replies ({{comment?.kids.length}})</a>
-		</span>
+			<article class="articles" [innerHTML]="comment?.text" *ngIf="showComment"></article>
+
+			<span class="showReplies" *ngIf="comment?.kids.length >0">
+				<a (click)="toggleReplies()" *ngIf="showReplies" >Hide replies</a>
+			</span>
+
+			<span class="showReplies" *ngIf="comment?.kids.length >0">
+				<a (click)="toggleReplies()" *ngIf="!showReplies" >Show replies ({{comment?.kids.length}})</a>
+			</span>
+
+		</div>
 		<hr>
 	</div>
 </div>
