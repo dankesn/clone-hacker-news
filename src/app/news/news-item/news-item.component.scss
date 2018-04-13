@@ -31,6 +31,10 @@
 	}
 }
 
+.line { 
+display: none;
+}
+
 
 @media only screen and (max-width: 750px){
 	.item {
@@ -39,6 +43,10 @@
 
 	.title {
 		letter-spacing: none; 
+	}
+
+	.line{
+		display: block; 
 	}
 
 

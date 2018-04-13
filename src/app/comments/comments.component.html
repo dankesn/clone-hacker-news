@@ -9,11 +9,11 @@
 <div class="row">
 	<div class="col" >
 		<div>
-		
-		<div *ngIf="story">
-		<hn-comment-item   *ngFor="let commentId of story.kids" [commentId]="commentId" [storyId]="story.id"></hn-comment-item>
-		</div>
-	
+			
+			<div *ngIf="story">
+				<hn-comment-item   *ngFor="let commentId of story.kids" [commentId]="commentId" [storyId]="story.id"></hn-comment-item>
+			</div>
+			
 		</div>
 	</div>
 </div>

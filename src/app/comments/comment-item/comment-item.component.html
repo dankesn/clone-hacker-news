@@ -2,8 +2,8 @@
 	<div class="col" *ngIf="comment?.by">   <!-- to hide comments which have only time displaying -->
 		<div class="author">
 			<span *ngIf="storyId==comment.parent">   <!-- collapsing only on comments, not on replies -->
-			<a (click) = "toggleComment()" *ngIf="!showComment" class="collapseCom">[+]</a>
-			<a (click) = "toggleComment()" *ngIf="showComment" class="collapseCom">[-]</a>
+				<a (click) = "toggleComment()" *ngIf="!showComment" class="collapseCom">[+]</a>
+				<a (click) = "toggleComment()" *ngIf="showComment" class="collapseCom">[-]</a>
 			</span>
 			<span class="by">{{comment?.by }}</span>
 			<span class="commentTime">| {{comment?.time*1000 | timeAgo}}</span>

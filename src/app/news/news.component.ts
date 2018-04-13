@@ -16,9 +16,8 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
   	this.getIds(); 
-
-
 }
+
 
 	getIds(){
  	this.newsService.getTopStoriesId().subscribe(response =>{
@@ -52,6 +51,7 @@ export class NewsComponent implements OnInit {
    }
    }
 }
+
 
 	
 

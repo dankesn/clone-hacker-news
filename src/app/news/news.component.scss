@@ -9,7 +9,7 @@
 .loadMore {
 	margin: 1em;
 	border: none; 
-	background: white; 
+	background: #F8F8F9; 
 	padding: 0.5em; 
 	outline: none; 
 	cursor: pointer; 
@@ -35,4 +35,15 @@
   .news {
   	margin-top: 0.5em; 
   }
+}
+
+@media only screen and (max-width: 700px) {
+	.loadMore{
+		background: $primary-color;
+		color: #fff; 
+
+		&:hover{
+		color: #000; 
+	}
+	}
 }
