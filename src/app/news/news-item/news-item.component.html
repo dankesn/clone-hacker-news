@@ -12,7 +12,7 @@
 					<span>{{story?.score}} points &nbsp;</span>
 					<span>by {{story?.by}} &nbsp;</span>
 					<span>{{story?.time*1000 | timeAgo}} &nbsp;</span>
-					<a *ngIf="story" [routerLink]="['/news/', story.id]">Comments: {{story.kids.length}}</a>
+					<a *ngIf="story" [routerLink]="['/news/', story.id]">Comments: {{story.descendants}}</a>
 					<hr class="line">
 				</div>
 			</span>
