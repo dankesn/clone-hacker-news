@@ -23,15 +23,26 @@ export class NewsComponent implements OnInit {
 	getIds(){
  	this.newsService.getTopStoriesId().subscribe(response =>{
   		this.topStoriesId = response; 
-  		this.getTopStories(); 
+  		this.getInitialStories(); 
   	},
     error =>{
       console.log("Error. Reason:", error.statusText);
     })
   }
 
-  	getTopStories(y?){
-  		   if (y){
+  getInitialStories(){
+    for (let i= 0; i < this.newsCounter; i ++){
+     this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
+       this.stories.push(response); 
+     },
+     error =>{
+      console.log("Error. Reason:", error.statusText);
+    })
+   }
+
+  }
+
+  	getTopStories(y){
      for (let i= y; i < this.newsCounter; i ++){
      this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
        this.stories.push(response); 
@@ -41,19 +52,7 @@ export class NewsComponent implements OnInit {
     })
    }
 
-   }else {   
-     for (let i= 0; i < this.newsCounter; i ++){
-     this.newsService.getStory(this.topStoriesId[i]).subscribe(response=>{
-       this.stories.push(response); 
-     },
-     error =>{
-      console.log("Error. Reason:", error.statusText);
-    })
    }
-   }
-}
-
-	
 
 	getMoreNews(){
 		 let index = this.newsCounter; 
