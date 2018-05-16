@@ -1,0 +1,44 @@
+@import '../../sass/_variables';
+
+
+.reply {
+	padding-left: 4em; 
+	font-size: 11pt;
+}
+
+.showReplies {
+	cursor: pointer;
+	color: $primary-color;
+
+	&:hover {
+		color: $link-color; 
+	}
+	&:visited {
+		color: $link-color; 
+	}
+}
+
+
+.author{
+padding: 0, 0.5em; 
+margin-bottom: 0.5em; 
+
+.articles {
+	display: inline; 
+}
+
+.by{
+	font-weight: bold; 
+}
+
+}
+
+.collapseCom {
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+	.reply {
+		padding-left: 1em; 
+	}
+}

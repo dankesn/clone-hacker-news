@@ -1,0 +1,32 @@
+<div class="row" *ngIf="comment">
+	<div class="col" *ngIf="comment?.by">   <!-- to hide comments which have only time displaying -->
+		<div class="author">
+			<span *ngIf="storyId==comment.parent">   <!-- collapsing only on comments, not on replies -->
+				<a (click) = "toggleComment()" *ngIf="!showComment" class="collapseCom">[+]</a>
+				<a (click) = "toggleComment()" *ngIf="showComment" class="collapseCom">[-]</a>
+			</span>
+			<span class="by">{{comment?.by }}</span>
+			<span class="commentTime">| {{comment.time*1000 | timeAgo}}</span>
+		</div>
+		<div>
+
+			<article class="articles" [innerHTML]="comment.text" *ngIf="showComment"></article>
+
+			<span class="showReplies" *ngIf="comment.kids.length >0">
+				<a (click)="toggleReplies()" *ngIf="showReplies" >Hide replies</a>
+			</span>
+
+			<span class="showReplies" *ngIf="comment.kids.length >0">
+				<a (click)="toggleReplies()" *ngIf="!showReplies" >Show replies ({{comment.kids.length}})</a>
+			</span>
+
+		</div>
+		<hr>
+	</div>
+</div>
+
+<div class="row" *ngIf="showReplies" class="reply">
+	<hn-comment-item *ngFor = "let commentId of comment.kids" [commentId] = "commentId"></hn-comment-item>
+</div>
+
+

@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col newsDisplay" >
+		<hn-news-item [story]="story"></hn-news-item>
+	</div>
+</div>
+<hr>
+
+
+<div class="row">
+	<div class="col" >
+		<div>
+			
+			<div *ngIf="story">
+				<hn-comment-item   *ngFor="let commentId of story.kids" [commentId]="commentId" [storyId]="story.id"></hn-comment-item>
+			</div>
+			
+		</div>
+	</div>
+</div>
